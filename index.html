@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="南京审计大学校园乒乓球搭子与约战平台高保真原型" />
+  <title>南审乒搭 · PingMate</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2ZM3 9h18M8 2v4M16 2v4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+    <symbol id="i-swords" viewBox="0 0 24 24"><path d="m14 5 5-3 3 3-3 5M10 19l-5 3-3-3 3-5M13 6 4 15M11 18l9-9M15 14l6 6M3 3l7 7"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-5 3-8 8-8s8 3 8 8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 13 5 5L20 6"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <button class="brand" data-view-target="dashboard" aria-label="返回首页">
+      <span class="brand-mark"><span></span></span>
+      <span class="brand-copy"><strong>南审乒搭</strong><small>PINGMATE · NAU</small></span>
+    </button>
+
+    <nav class="main-nav" aria-label="主导航">
+      <button class="nav-item active" data-view-target="dashboard">首页</button>
+      <button class="nav-item" data-view-target="hall">搭子大厅</button>
+      <button class="nav-item" data-view-target="matches">我的约战<span class="nav-dot">1</span></button>
+      <button class="nav-item" data-view-target="ranking">排行榜</button>
+    </nav>
+
+    <div class="user-tools">
+      <span class="campus-badge"><span class="verified-dot"></span>南京审计大学</span>
+      <button class="icon-btn notice-btn" aria-label="通知"><svg><use href="#i-bell"/></svg><span></span></button>
+      <button class="user-chip" data-open-profile="self">
+        <span class="mini-avatar">C</span>
+        <span><strong>cyw</strong><small>L2 · 直拍</small></span>
+        <b>⌄</b>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="view active" data-view="dashboard">
+      <div class="hero reveal">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>今晚可约</span><i></i>2026 AUTUMN SEASON</div>
+          <h1>今晚，<br><em>开一局？</em></h1>
+          <p>找到与你节奏相合的球友。轻松约球，认真记录每一次进步。</p>
+          <div class="hero-actions">
+            <button class="btn btn-accent" data-view-target="hall">寻找球友 <svg><use href="#i-arrow"/></svg></button>
+            <button class="btn btn-ghost" data-open-assessment>完善能力画像</button>
+          </div>
+          <div class="hero-meta">
+            <div><strong>26</strong><span>今晚可约</span></div>
+            <div><strong>08</strong><span>校内球台</span></div>
+            <div><strong>93%</strong><span>约战完成率</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="乒乓球台抽象插画">
+          <div class="poster-index">NO. 01</div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="ball-main"><span></span></div>
+          <div class="table-plane"><span class="net"></span><span class="table-line"></span></div>
+          <div class="float-card rating-float"><small>当前评分</small><strong data-elo>1000</strong><span>新赛季起点</span></div>
+          <div class="float-card style-float"><small>PLAYER STYLE</small><strong>直拍</strong><span>近台 · 节奏型</span></div>
+          <div class="visual-caption">MAKE<br>THE<br>FIRST<br>SERVE.</div>
+        </div>
+      </div>
+
+      <section class="content-section reveal delay-1">
+        <div class="section-heading">
+          <div><span class="section-no">01</span><h2>你的球桌</h2><p>10月24日 · 星期六</p></div>
+          <button class="text-link" data-view-target="matches">查看全部 <svg><use href="#i-arrow"/></svg></button>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="next-match-card">
+            <div class="card-label">NEXT MATCH <span>已确认</span></div>
+            <div class="duel-row">
+              <div class="duel-player current"><div class="avatar avatar-cyw">CYW</div><strong>cyw</strong><span>L2 · 1000</span></div>
+              <div class="versus"><span>19:30</span><b>VS</b><small>排位约战</small></div>
+              <div class="duel-player"><div class="avatar avatar-lin">林</div><strong>林逸</strong><span>L3 · 1126</span></div>
+            </div>
+            <div class="match-facts">
+              <span><svg><use href="#i-calendar"/></svg>今晚 19:30–20:30</span>
+              <span><svg><use href="#i-pin"/></svg>润园体育馆 · 3号台</span>
+            </div>
+            <button class="inline-action" data-score-player="林逸">比赛结束后提交比分 <svg><use href="#i-arrow"/></svg></button>
+          </article>
+
+          <article class="level-card">
+            <div class="card-label">LEVEL JOURNEY</div>
+            <div class="level-ring"><span>L2</span><small>入门</small></div>
+            <div class="level-copy"><strong>距离 L3 还差 100 分</strong><p>再完成 3 场排位赛，系统将重新评估你的等级。</p></div>
+            <div class="progress"><span style="width: 36%"></span></div>
+            <div class="progress-labels"><span>1000</span><span>目标 1100</span></div>
+          </article>
+
+          <article class="quick-card">
+            <div class="card-label">QUICK MATCH</div>
+            <h3>5 位球友<br>与你高度匹配</h3>
+            <div class="avatar-stack"><span class="avatar avatar-z">周</span><span class="avatar avatar-w">吴</span><span class="avatar avatar-s">苏</span><span class="avatar avatar-lin">林</span><span class="avatar avatar-more">+1</span></div>
+            <button class="btn btn-dark" data-view-target="hall">立即看看 <svg><use href="#i-arrow"/></svg></button>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section reveal delay-2">
+        <div class="section-heading compact">
+          <div><span class="section-no">02</span><h2>南审热局</h2><p>此刻正在校园发生</p></div>
+        </div>
+        <div class="live-strip">
+          <div class="live-label"><i></i>LIVE</div>
+          <div class="live-match"><strong>陈卓</strong><span>2</span><b>:</b><span>1</span><strong>江宁</strong><small>澄园体育馆 · 2号台</small></div>
+          <div class="live-match"><strong>顾言</strong><span>0</span><b>:</b><span>2</span><strong>赵清</strong><small>润园体育馆 · 5号台</small></div>
+          <div class="live-match"><strong>秦朗</strong><span>1</span><b>:</b><span>1</span><strong>周禾</strong><small>莫愁校区 · 1号台</small></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="view" data-view="hall">
+      <header class="view-header reveal">
+        <div><div class="eyebrow"><span>MATCHING HALL</span><i></i>南京审计大学</div><h1>搭子大厅</h1><p>不只看分数，也看时间、打法与打球目的。</p></div>
+        <div class="hall-count"><strong>26</strong><span>位球友<br>今晚可约</span></div>
+      </header>
+
+      <div class="filter-bar reveal delay-1">
+        <label class="search-box"><svg><use href="#i-search"/></svg><input type="search" placeholder="搜索昵称、打法或场地" /></label>
+        <div class="filter-group" aria-label="筛选条件">
+          <button class="filter-chip active">推荐</button>
+          <button class="filter-chip">L2–L3</button>
+          <button class="filter-chip">今晚</button>
+          <button class="filter-chip">直拍</button>
+          <button class="filter-chip">排位约战</button>
+        </div>
+        <button class="filter-more">筛选 <span>＋</span></button>
+      </div>
+
+      <div class="player-grid reveal delay-2">
+        <article class="player-card featured" data-name="林逸" data-level="L3" data-elo-value="1126" data-style="横拍 · 右手 · 弧圈快攻">
+          <div class="match-score">98<small>% 匹配</small></div><div class="avatar avatar-lin large">林</div>
+          <div class="player-head"><div><h3>林逸</h3><span>金融学院 · 大二</span></div><b class="level-badge">L3</b></div>
+          <div class="player-tags"><span>横拍</span><span>弧圈快攻</span><span>今晚有空</span></div>
+          <div class="player-stat"><div><small>ELO</small><strong>1126</strong></div><div><small>近10场</small><strong>6胜4负</strong></div><div><small>偏好</small><strong>排位</strong></div></div>
+          <p class="player-note">“想找能稳定多拍的球友，输赢都开心。”</p>
+          <div class="player-actions"><button class="btn btn-soft" data-player-detail>查看主页</button><button class="btn btn-accent" data-challenge>发起约战</button></div>
+        </article>
+
+        <article class="player-card" data-name="周禾" data-level="L2" data-elo-value="1038" data-style="直拍 · 右手 · 快攻">
+          <div class="match-score">94<small>% 匹配</small></div><div class="avatar avatar-z large">周</div>
+          <div class="player-head"><div><h3>周禾</h3><span>会计学院 · 大一</span></div><b class="level-badge">L2</b></div>
+          <div class="player-tags"><span>直拍</span><span>快攻</span><span>周末有空</span></div>
+          <div class="player-stat"><div><small>ELO</small><strong>1038</strong></div><div><small>近10场</small><strong>5胜5负</strong></div><div><small>偏好</small><strong>休闲</strong></div></div>
+          <p class="player-note">“刚练直拍不久，想一起进步。”</p>
+          <div class="player-actions"><button class="btn btn-soft" data-player-detail>查看主页</button><button class="btn btn-accent" data-challenge>发起约战</button></div>
+        </article>
+
+        <article class="player-card" data-name="苏桥" data-level="L3" data-elo-value="1164" data-style="横拍 · 左手 · 防守">
+          <div class="match-score">91<small>% 匹配</small></div><div class="avatar avatar-s large">苏</div>
+          <div class="player-head"><div><h3>苏桥</h3><span>法学院 · 大三</span></div><b class="level-badge">L3</b></div>
+          <div class="player-tags"><span>左手</span><span>防守</span><span>周三晚</span></div>
+          <div class="player-stat"><div><small>ELO</small><strong>1164</strong></div><div><small>近10场</small><strong>7胜3负</strong></div><div><small>偏好</small><strong>竞技</strong></div></div>
+          <p class="player-note">“削球防守型，欢迎越级挑战。”</p>
+          <div class="player-actions"><button class="btn btn-soft" data-player-detail>查看主页</button><button class="btn btn-accent" data-challenge>发起挑战</button></div>
+        </article>
+
+        <article class="player-card" data-name="吴漾" data-level="L2" data-elo-value="986" data-style="横拍 · 右手 · 入门">
+          <div class="match-score">89<small>% 匹配</small></div><div class="avatar avatar-w large">吴</div>
+          <div class="player-head"><div><h3>吴漾</h3><span>统计与数据科学学院 · 大一</span></div><b class="level-badge">L2</b></div>
+          <div class="player-tags"><span>横拍</span><span>入门</span><span>今晚有空</span></div>
+          <div class="player-stat"><div><small>ELO</small><strong>986</strong></div><div><small>近10场</small><strong>4胜6负</strong></div><div><small>偏好</small><strong>休闲</strong></div></div>
+          <p class="player-note">“希望多练回合，不介意新手局。”</p>
+          <div class="player-actions"><button class="btn btn-soft" data-player-detail>查看主页</button><button class="btn btn-accent" data-challenge>发起约战</button></div>
+        </article>
+
+        <article class="player-card" data-name="许峥" data-level="L4" data-elo-value="1328" data-style="直拍 · 左手 · 近台快攻">
+          <div class="match-score">83<small>% 匹配</small></div><div class="avatar avatar-x large">许</div>
+          <div class="player-head"><div><h3>许峥</h3><span>经济学院 · 研究生</span></div><b class="level-badge">L4</b></div>
+          <div class="player-tags"><span>直拍</span><span>左手</span><span>可陪练</span></div>
+          <div class="player-stat"><div><small>ELO</small><strong>1328</strong></div><div><small>近10场</small><strong>8胜2负</strong></div><div><small>偏好</small><strong>陪练</strong></div></div>
+          <p class="player-note">“直拍近台，有空可以一起练发接发。”</p>
+          <div class="player-actions"><button class="btn btn-soft" data-player-detail>查看主页</button><button class="btn btn-accent" data-challenge>越级挑战</button></div>
+        </article>
+
+        <article class="player-card invite-card">
+          <div class="invite-ball"></div><span>没找到合适的人？</span><h3>发布一张<br>公开约球卡</h3><p>写下时间、地点和期待的对手，让合适的人来找你。</p><button class="btn btn-dark" data-open-public>发布约球卡 <svg><use href="#i-arrow"/></svg></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" data-view="matches">
+      <header class="view-header reveal"><div><div class="eyebrow"><span>MATCH CENTER</span><i></i>全流程状态管理</div><h1>我的约战</h1><p>邀请、比赛与结果，一张看板掌握。</p></div><button class="btn btn-accent" data-view-target="hall">＋ 发起新约战</button></header>
+      <div class="match-tabs reveal delay-1"><button class="active">进行中 <span>3</span></button><button>已完成 <span>12</span></button><button>全部比赛 <span>15</span></button></div>
+      <div class="match-board reveal delay-2">
+        <article class="status-column"><header><span class="status-dot pending"></span><h2>待响应</h2><b>1</b></header><div class="board-card"><div class="board-meta"><span>你发出的邀请</span><small>12 分钟前</small></div><div class="board-player"><div class="avatar avatar-z">周</div><div><strong>周禾</strong><small>L2 · 1038</small></div><b>休闲</b></div><div class="board-info"><span><svg><use href="#i-calendar"/></svg>10月25日 18:30</span><span><svg><use href="#i-pin"/></svg>润园体育馆</span></div><div class="waiting-line"><span></span>等待对方回应</div></div></article>
+        <article class="status-column"><header><span class="status-dot confirmed"></span><h2>已确认</h2><b>1</b></header><div class="board-card emphasized"><div class="board-meta"><span>今晚的比赛</span><small class="green">已确认</small></div><div class="board-player"><div class="avatar avatar-lin">林</div><div><strong>林逸</strong><small>L3 · 1126</small></div><b>排位</b></div><div class="board-info"><span><svg><use href="#i-calendar"/></svg>今晚 19:30</span><span><svg><use href="#i-pin"/></svg>润园体育馆 · 3号台</span></div><button class="btn btn-dark full" data-score-player="林逸">提交比赛结果</button></div></article>
+        <article class="status-column"><header><span class="status-dot result"></span><h2>待确认结果</h2><b>1</b></header><div class="board-card"><div class="board-meta"><span>对方已提交</span><small>5 分钟前</small></div><div class="board-player"><div class="avatar avatar-w">吴</div><div><strong>吴漾</strong><small>L2 · 986</small></div><b>排位</b></div><div class="submitted-score"><span>CYW</span><strong>3 <i>:</i> 2</strong><span>吴漾</span></div><button class="btn btn-accent full" data-confirm-existing>确认比赛结果</button></div></article>
+      </div>
+    </section>
+
+    <section class="view" data-view="ranking">
+      <header class="ranking-hero reveal"><div><div class="eyebrow"><span>NAU RANKING</span><i></i>2026 秋季赛季</div><h1>每一分，<br>都有来路。</h1><p>排行榜每周一 00:00 更新周榜，总榜实时计算。</p></div><div class="your-rank"><small>你的校内排名</small><strong>#16</strong><span>较上周 <b>↑ 3</b></span></div></header>
+      <div class="ranking-tabs reveal delay-1"><button class="active">Elo 总榜</button><button>本周上分</button><button>连胜榜</button><button>新生榜</button></div>
+      <div class="ranking-layout reveal delay-2">
+        <div class="podium">
+          <div class="podium-person second"><div class="avatar avatar-s large">顾</div><strong>顾言</strong><span>L5 · 1672</span><b>02</b></div>
+          <div class="podium-person first"><i>冠军</i><div class="avatar avatar-x large">陈</div><strong>陈卓</strong><span>L5 · 1724</span><b>01</b></div>
+          <div class="podium-person third"><div class="avatar avatar-z large">赵</div><strong>赵清</strong><span>L4 · 1589</span><b>03</b></div>
+        </div>
+        <div class="rank-table">
+          <div class="rank-row rank-head"><span>排名</span><span>选手</span><span>等级</span><span>近10场</span><span>Elo</span><span>趋势</span></div>
+          <div class="rank-row"><span>04</span><span><i class="avatar avatar-lin">江</i><b>江宁</b></span><span>L4</span><span>7胜3负</span><strong>1512</strong><em>↑ 2</em></div>
+          <div class="rank-row"><span>05</span><span><i class="avatar avatar-w">许</i><b>许峥</b></span><span>L4</span><span>8胜2负</span><strong>1328</strong><em>—</em></div>
+          <div class="rank-row"><span>06</span><span><i class="avatar avatar-s">苏</i><b>苏桥</b></span><span>L3</span><span>7胜3负</span><strong>1164</strong><em>↑ 4</em></div>
+          <div class="rank-row"><span>07</span><span><i class="avatar avatar-lin">林</i><b>林逸</b></span><span>L3</span><span>6胜4负</span><strong>1126</strong><em>↑ 1</em></div>
+          <div class="rank-row self"><span>16</span><span><i class="avatar avatar-cyw">C</i><b>cyw <small>你</small></b></span><span>L2</span><span>新赛季</span><strong data-elo>1000</strong><em>NEW</em></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" data-modal="challenge" aria-hidden="true">
+    <section class="modal challenge-modal" role="dialog" aria-modal="true" aria-labelledby="challengeTitle">
+      <button class="modal-close" data-close-modal>×</button>
+      <div class="modal-kicker">CREATE A MATCH</div><h2 id="challengeTitle">向 <span data-opponent-name>林逸</span> 发起约战</h2>
+      <div class="opponent-summary"><div class="avatar avatar-lin large" data-opponent-avatar>林</div><div><strong data-opponent-name>林逸</strong><span><b data-opponent-level>L3</b> · Elo <b data-opponent-elo>1126</b></span><small data-opponent-style>横拍 · 右手 · 弧圈快攻</small></div><div class="versus-mini">VS</div><div class="avatar avatar-cyw large">CYW</div></div>
+      <label class="field-label">选择模式</label><div class="mode-switch"><button>休闲约球<small>不计积分</small></button><button class="active">排位约战<small>预计 +20 / -12</small></button><button>越级挑战<small>高收益</small></button></div>
+      <div class="form-grid"><div><label class="field-label">日期</label><div class="date-picks"><button class="active">今天<small>10/24</small></button><button>明天<small>10/25</small></button><button>周一<small>10/26</small></button></div></div><div><label class="field-label">开始时间</label><button class="select-like">19:30 <span>⌄</span></button></div></div>
+      <label class="field-label">场地</label><div class="venue-picks"><button class="active"><svg><use href="#i-pin"/></svg><span><strong>润园体育馆</strong><small>3号台 · 可用</small></span></button><button><svg><use href="#i-pin"/></svg><span><strong>澄园体育馆</strong><small>5号台 · 可用</small></span></button></div>
+      <button class="btn btn-accent full modal-submit" data-send-challenge>确认并发送邀请 <svg><use href="#i-arrow"/></svg></button>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" data-modal="score" aria-hidden="true">
+    <section class="modal score-modal" role="dialog" aria-modal="true" aria-labelledby="scoreTitle">
+      <button class="modal-close" data-close-modal>×</button>
+      <div class="score-step active" data-score-step="form">
+        <div class="modal-kicker">MATCH RESULT</div><h2 id="scoreTitle">提交比赛结果</h2><p>请确认比分无误。提交后需由对手确认，才会更新 Elo。</p>
+        <div class="score-versus"><div><div class="avatar avatar-cyw large">CYW</div><strong>cyw</strong></div><div class="score-inputs"><button data-score-minus>−</button><input value="3" readonly aria-label="cyw 得分"><i>:</i><input value="1" readonly aria-label="对手得分"><button data-score-plus>＋</button></div><div><div class="avatar avatar-lin large">林</div><strong data-score-opponent>林逸</strong></div></div>
+        <div class="elo-preview"><span>若结果确认</span><strong>预计 Elo <b>+18</b></strong><small>1000 → 1018</small></div>
+        <button class="btn btn-accent full" data-submit-score>提交并请对方确认</button>
+      </div>
+      <div class="score-step" data-score-step="success">
+        <div class="success-orbit"><div class="success-ball"><svg><use href="#i-check"/></svg></div></div><div class="modal-kicker">RESULT CONFIRMED</div><h2>漂亮的一局！</h2><p>双方已确认比赛结果，评分与排行榜已经更新。</p><div class="elo-result"><small>最新 ELO</small><strong>1018</strong><span>+18</span></div><div class="result-summary"><span>校内排名 <b>#16 → #13</b></span><span>本周战绩 <b>1 胜 0 负</b></span></div><button class="btn btn-dark full" data-finish-score>返回我的约战</button>
+      </div>
+    </section>
+  </div>
+
+  <aside class="profile-drawer" aria-hidden="true">
+    <button class="modal-close" data-close-profile>×</button><div class="drawer-cover"><span>PLAYER / 07</span></div><div class="drawer-content"><div class="avatar avatar-lin xl" data-drawer-avatar>林</div><div class="profile-title"><div><h2 data-drawer-name>林逸</h2><p>南京审计大学 · 已认证</p></div><span data-drawer-level>L3</span></div><div class="drawer-elo"><small>当前 Elo</small><strong data-drawer-elo>1126</strong><span>近 7 天 ↑ 42</span></div><div class="profile-facts"><div><small>近10场</small><strong>6胜4负</strong></div><div><small>胜率</small><strong>60%</strong></div><div><small>最高连胜</small><strong>4</strong></div></div><h3>技术画像</h3><div class="radar-placeholder"><div class="radar-shape"></div><span class="r1">正手 78</span><span class="r2">反手 63</span><span class="r3">发球 72</span><span class="r4">防守 58</span></div><p class="profile-bio" data-drawer-style>横拍 · 右手 · 弧圈快攻</p><button class="btn btn-accent full" data-drawer-challenge>向 TA 发起约战</button></div>
+  </aside>
+  <div class="drawer-shade" data-close-profile></div>
+  <div class="toast" role="status"><span><svg><use href="#i-check"/></svg></span><div><strong>邀请已发送</strong><small>对方回应后会第一时间通知你</small></div></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
